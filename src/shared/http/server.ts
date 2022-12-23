@@ -2,8 +2,8 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
-import AppError from '../errors/AppError';
-import '../typeorm/index'
+import AppError from '@shared/errors/AppError';
+import '@shared/typeorm';
 
 const app = express();
 const port: number = 3000 || process.env.PORT;
