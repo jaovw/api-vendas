@@ -1,7 +1,10 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import ProductRepository from '../typeorm/repositories/ProductsRepository';
-import IRequest from './interfaces/IRequest';
+
+interface IRequest {
+  id: string
+}
 
 export default class DeleteProductService {
   public async execute({ id }: IRequest): Promise<void> {
