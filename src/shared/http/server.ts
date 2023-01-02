@@ -6,12 +6,15 @@ import cors from 'cors';
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm';
+import uploadConfig from '@config/upload';
 
 const app = express();
 const port: number = 3000 || process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/files', express.static(uploadConfig.directory))
 
 app.use(routes);
 
