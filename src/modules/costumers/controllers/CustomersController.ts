@@ -29,7 +29,7 @@ export default class CustomersController {
 
     const createCustomer = new CreateCustomerService();
 
-    const customer = createCustomer.execute({
+    const customer = await createCustomer.execute({
       name,
       email,
     });
@@ -59,6 +59,6 @@ export default class CustomersController {
 
     await deleteCustomer.execute({ id });
 
-    return response.json([])
+    return response.json([]);
   }
 }
