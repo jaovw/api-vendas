@@ -16,6 +16,6 @@ export default class DeleteCustomerService {
       throw new AppError('Customer nao encontrado.');
     }
 
-    await customersRepository.delete(customer);
+    await customersRepository.remove(customer);
   }
 }
